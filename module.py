@@ -35,8 +35,9 @@ def get_user_attack():
     for i in range(5):
         input_attack = input('Введи тип атаки: ').lower()
         attack_value = attacks_types[input_attack]()
+        total += attack_value
         print(f'Количество очков твоей атаки: {attack_value}.')
-        total += 1
+        print(f'Всего урона: {total}.')
     return total
 
 
@@ -50,8 +51,8 @@ def run_game():
     else:
         print('В этот раз не повезло :( Бой проигран.')
     yes_no = {
-        'Y': True,
-        'N': False,
+        'y': True,
+        'n': False,
     }
     replay = input('Чтобы сыграть ещё раз, введи "y"; '
                    'если не хочешь продолжать игру, введи "n": ')
